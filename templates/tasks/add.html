@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+
+{% load staticfiles %}
+
+
+{% block title %}Add new task{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+	<div class="page-header">
+		<h2>{{ title }}</h2>
+	</div>
+	
+		<form class="navbar-form pull-left" method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button type="submit" class="btn">Сохранить</button>
+		</form>
+
+</div>
+{% endblock content %}
